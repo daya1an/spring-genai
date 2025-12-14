@@ -67,7 +67,7 @@ Store AI requests/responses and audit logs in MySQL.
 ### 5. **Caching**
 Redis-based response caching with TTL.
 
-**Code:** [`GenAIService.java`](src/main/java/com/springai/spring_genai/service/GenAIService.java) - Line 57: `@Cacheable`
+**Code:** [`GenAIService.java`](src/main/java/com/springai/spring_genai/service/impl/GenAIServiceImp.java) - Line 53: `@Cacheable`
 
 **Features:**
 - Cache based on prompt hash
