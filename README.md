@@ -89,6 +89,8 @@ app.api.rate-limit.duration-minutes=1
 ### 7. **Audit Logging**
 Track all API calls with user, IP, action, and status.
 
+![DB Screenshot.png](assets/DB%20Screenshot.png)
+
 **Code:**
 - [`AuditAspect.java`](src/main/java/com/springai/spring_genai/aspect/AuditAspect.java) - AOP-based auditing
 - [`@Auditable` annotation](src/main/java/com/springai/spring_genai/annotation/Auditable.java)
@@ -99,7 +101,6 @@ Track all API calls with user, IP, action, and status.
 - Processing time
 - Success/failure status
 
-![img.png](assests/DB Screenshot.png)
 ### 8. **Resilience & Fault Tolerance**
 Prevent cascading failures with circuit breaker and retry logic.
 
