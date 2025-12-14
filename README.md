@@ -31,7 +31,7 @@ http://localhost:8080/swagger-ui.html
 ### 1. **AI Endpoints**
 7 RESTful endpoints for different AI use cases.
 
-**Code:** [`GenAIController.java`](src/main/java/com/genai/controller/GenAIController.java)
+**Code:** [`GenAIController.java`](src/main/java/com/springai/spring_genai/controller/GenAIController.java)
 
 | Endpoint | Purpose |
 |----------|---------|
@@ -47,8 +47,8 @@ http://localhost:8080/swagger-ui.html
 Request validation, input sanitization, and CORS configuration.
 
 **Code:**
-- [`SecurityConfig.java`](src/main/java/com/genai/config/SecurityConfig.java) - CORS & authentication
-- [`ValidationUtils.java`](src/main/java/com/genai/util/ValidationUtils.java) - Input validation & sanitization
+- [`SecurityConfig.java`](src/main/java/com/springai/spring_genai/config/SecurityConfig.java) - CORS & authentication
+- [`ValidationUtils.java`](src/main/java/com/springai/spring_genai/util/ValidationUtils.java) - Input validation & sanitization
 
 **Features:**
 - Input length validation (max 10,000 chars)
@@ -59,7 +59,7 @@ Request validation, input sanitization, and CORS configuration.
 ### 3. **Error Handling**
 Global exception handler with meaningful error responses.
 
-**Code:** [`GlobalExceptionHandler.java`](src/main/java/com/genai/exception/GlobalExceptionHandler.java)
+**Code:** [`GlobalExceptionHandler.java`](src/main/java/com/springai/spring_genai/exception/GlobalExceptionHandler.java)
 
 **Custom Exceptions:**
 - `InvalidPromptException` - Invalid input
@@ -71,8 +71,8 @@ Global exception handler with meaningful error responses.
 Store AI requests/responses and audit logs in MySQL.
 
 **Code:**
-- [`AIRequestEntity.java`](src/main/java/com/genai/entity/AIRequestEntity.java) - Request storage
-- [`AuditLogEntity.java`](src/main/java/com/genai/entity/AuditLogEntity.java) - Audit trail
+- [`AIRequestEntity.java`](src/main/java/com/springai/spring_genai/entity/AIRequestEntity.java) - Request storage
+- [`AuditLogEntity.java`](src/main/java/com/springai/spring_genai/entity/AuditLogEntity.java) - Audit trail
 
 **Features:**
 - Track all requests with processing times
@@ -83,7 +83,7 @@ Store AI requests/responses and audit logs in MySQL.
 ### 5. **Caching**
 Redis-based response caching with TTL.
 
-**Code:** [`GenAIService.java`](src/main/java/com/genai/service/GenAIService.java) - Line 57: `@Cacheable`
+**Code:** [`GenAIService.java`](src/main/java/com/springai/spring_genai/service/GenAIService.java) - Line 57: `@Cacheable`
 
 **Features:**
 - Cache based on prompt hash
@@ -94,7 +94,7 @@ Redis-based response caching with TTL.
 ### 6. **Rate Limiting**
 Prevent abuse with per-user request throttling.
 
-**Code:** [`RateLimitInterceptor.java`](src/main/java/com/genai/interceptor/RateLimitInterceptor.java)
+**Code:** [`RateLimitInterceptor.java`](src/main/java/com/springai/spring_genai/interceptor/RateLimitInterceptor.java)
 
 **Configuration:**
 ```properties
@@ -106,8 +106,8 @@ app.api.rate-limit.duration-minutes=1
 Track all API calls with user, IP, action, and status.
 
 **Code:**
-- [`AuditAspect.java`](src/main/java/com/genai/aspect/AuditAspect.java) - AOP-based auditing
-- [`@Auditable` annotation](src/main/java/com/genai/annotation/Auditable.java)
+- [`AuditAspect.java`](src/main/java/com/springai/spring_genai/aspect/AuditAspect.java) - AOP-based auditing
+- [`@Auditable` annotation](src/main/java/com/springai/spring_genai/annotation/Auditable.java)
 
 **Logged Data:**
 - User ID & IP address
@@ -118,7 +118,7 @@ Track all API calls with user, IP, action, and status.
 ### 8. **Resilience & Fault Tolerance**
 Prevent cascading failures with circuit breaker and retry logic.
 
-**Code:** [`AIConfiguration.java`](src/main/java/com/genai/config/AIConfiguration.java)
+**Code:** [`AIConfiguration.java`](src/main/java/com/springai/spring_genai/config/AIConfiguration.java)
 
 **Features:**
 - **Circuit Breaker** - 50% failure threshold, 10s wait
@@ -129,7 +129,7 @@ Prevent cascading failures with circuit breaker and retry logic.
 ### 9. **API Documentation**
 Interactive Swagger UI with endpoint details and schemas.
 
-**Code:** [`GenAIApplication.java`](src/main/java/com/genai/GenAIApplication.java) - OpenAPI definition
+**Code:** [`GenAIApplication.java`](src/main/java/com/springai/spring_genai/GenAIApplication.java) - OpenAPI definition
 
 **Access:**
 ```
@@ -151,7 +151,7 @@ JSON-formatted logs with request tracking and metrics.
 ### 11. **Monitoring & Metrics**
 Prometheus-compatible metrics and health checks.
 
-**Code:** [`AIConfiguration.java`](src/main/java/com/genai/config/AIConfiguration.java)
+**Code:** [`AIConfiguration.java`](src/main/java/com/springai/spring_genai/config/AIConfiguration.java)
 
 **Access:**
 ```
@@ -163,7 +163,7 @@ http://localhost:8080/actuator/prometheus
 ### 12. **Configuration Management**
 Externalized configuration with type-safe properties.
 
-**Code:** [`AppProperties.java`](src/main/java/com/genai/config/AppProperties.java)
+**Code:** [`AppProperties.java`](src/main/java/com/springai/spring_genai/config/AppProperties.java)
 
 **Config File:** [`application.properties`](src/main/resources/application.properties)
 
@@ -222,7 +222,7 @@ curl -X POST http://localhost:8080/api/v1/ai/translate \
 ## 🏗️ Project Structure
 
 ```
-src/main/java/com/genai/
+src/main/java/com/springai/spring_genai/
 ├── GenAIApplication.java          # Main app with OpenAPI config
 ├── config/                         # Configuration classes
 │   ├── AIConfiguration.java        # Resilience & caching setup
