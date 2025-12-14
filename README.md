@@ -1,7 +1,6 @@
 # Spring Boot Gen AI API
 
-A production-ready Spring Boot application integrating Google Gemini 2.5-flash AI model with enterprise-grade features.
-
+A production-grade Spring Boot REST API integrating Google Gemini 2.5-flash AI model with six distinct use cases (text generation, summarization, Q&A, translation, code generation, analysis); implemented comprehensive configuration management via application.properties for model selection, temperature tuning, safety settings (HARM_CATEGORY validations), token limits, and dynamic API key injection using environment variables.
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -10,21 +9,6 @@ A production-ready Spring Boot application integrating Google Gemini 2.5-flash A
 - Google Gemini API Key ([Get one here](https://aistudio.google.com/app/apikey))
 - MySQL 8.0+ (optional, for persistence)
 - Redis 6.0+ (optional, for caching)
-
-### Setup
-```bash
-# 1. Set API key
-export GOOGLE_GEMINI_API_KEY=your-api-key-here
-
-# 2. Build & Run
-./gradlew clean build
-./gradlew bootRun
-
-# 3. Access Swagger UI
-http://localhost:8080/swagger-ui.html
-```
-
----
 
 ## ✨ Features
 
