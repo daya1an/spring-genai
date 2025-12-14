@@ -1,4 +1,4 @@
-# Spring Boot Enterprise Gen AI API
+# Spring Boot Gen AI API
 
 A production-ready Spring Boot application integrating Google Gemini 2.5-flash AI model with enterprise-grade features.
 
@@ -115,6 +115,7 @@ Track all API calls with user, IP, action, and status.
 - Processing time
 - Success/failure status
 
+![img.png](assests/DB Screenshot.png)
 ### 8. **Resilience & Fault Tolerance**
 Prevent cascading failures with circuit breaker and retry logic.
 
@@ -261,24 +262,6 @@ src/main/java/com/springai/spring_genai/
 
 ---
 
-## 🎯 Gradle Commands
-
-```bash
-# Build
-./gradlew clean build
-
-# Run
-./gradlew bootRun
-
-# Tests
-./gradlew test
-
-# View dependencies
-./gradlew dependencies
-```
-
----
-
 ## 📚 Key Files Reference
 
 | File | Purpose |
@@ -293,32 +276,3 @@ src/main/java/com/springai/spring_genai/
 | `ValidationUtils.java` | Input validation |
 
 ---
-
-## 🔒 Security Notes
-
-- **API Key:** Use environment variables, never commit keys
-- **CORS:** Configured for localhost (update for production)
-- **Input Validation:** All prompts sanitized & validated
-- **Audit Trail:** All actions logged for compliance
-
----
-
-## 🚀 Deployment
-
-1. Update `SecurityConfig.java` with production origins
-2. Configure production database connection
-3. Set JWT secret in `application.properties`
-4. Build Docker image: `docker build -t genai:latest .`
-5. Deploy with proper environment variables
-
----
-
-## 📄 License
-
-Apache 2.0 - See LICENSE file
-
----
-
-**Last Updated:** December 14, 2025
-**Version:** 1.0.0
-**Status:** Production Ready ✅
