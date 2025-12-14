@@ -24,8 +24,12 @@ public class AIResponse {
 
     private boolean success;
 
+    private Long processingTimeMs;
+
     @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
 
     private String errorMessage;
+
+    private String requestId;
 }
