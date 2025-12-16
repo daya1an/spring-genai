@@ -1,4 +1,4 @@
-# Spring Boot Gen AI API
+# GenAI REST Service
 
 A production-grade Spring Boot REST API integrating Google Gemini 2.5-flash AI model with six distinct use cases (text generation, summarization, Q&A, translation, code generation, analysis); implemented comprehensive configuration management via application.properties for model selection, temperature tuning, safety settings (HARM_CATEGORY validations), token limits, and dynamic API key injection using environment variables.
 ## 🚀 Quick Start
